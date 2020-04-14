@@ -4,7 +4,7 @@ SPDX-License-Identifier: Apache-2.0
 */
 
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { EditorView, View } from 'src/app/modules/shared/models/content';
+import { EditorView, View } from '../../../../shared/models/content';
 import { ThemeService } from '../../../../sugarloaf/components/smart/theme-switch/theme-switch.service';
 import { ActionService } from '../../../services/action/action.service';
 
