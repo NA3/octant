@@ -1,17 +1,21 @@
 import { Component } from '@angular/core';
-import { LabelsView } from '../../../../../../../src/app/modules/shared/models/content';
+import {
+  LabelsView,
+  View,
+} from '../../../../../../../src/app/modules/shared/models/content';
 
 const view: LabelsView = {
   config: {
-    labels: { ['foor']: 'bar' },
+    labels: { ['foo']: 'bar' },
   },
   metadata: {
     type: 'labels',
   },
 };
 
-const code = `labels component
-`;
+const code = `labels = map[string]string{"foo": "bar"}
+component.NewLabels(labels)`;
+const json = JSON.stringify(view, null, 4);
 
 @Component({
   selector: 'app-angular-labels-demo',
@@ -20,4 +24,5 @@ const code = `labels component
 export class AngularLabelsDemoComponent {
   view = view;
   code = code;
+  json = json;
 }

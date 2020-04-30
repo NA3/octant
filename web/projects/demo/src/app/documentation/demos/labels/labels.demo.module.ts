@@ -7,9 +7,11 @@ import { ApiLabelsDemoComponent } from './api-labels.demo';
 import { AngularLabelsDemoComponent } from './angular-labels.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { UtilsModule } from '../../../utils/utils.module';
 
 @NgModule({
   imports: [
+    UtilsModule,
     SharedModule,
     CommonModule,
     FormsModule,
