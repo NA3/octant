@@ -7,9 +7,11 @@ import { ApiLinkDemoComponent } from './api-link.demo';
 import { AngularLinkDemoComponent } from './angular-link.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { UtilsModule } from '../../../utils/utils.module';
 
 @NgModule({
   imports: [
+    UtilsModule,
     SharedModule,
     CommonModule,
     FormsModule,

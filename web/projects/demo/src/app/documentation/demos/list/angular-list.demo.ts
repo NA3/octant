@@ -1,10 +1,31 @@
 import { Component } from '@angular/core';
-import { ListView } from '../../../../../../../src/app/modules/shared/models/content';
+import {
+  ListView,
+  TextView,
+} from '../../../../../../../src/app/modules/shared/models/content';
+
+const item1: TextView = {
+  config: {
+    value: 'sample text',
+  },
+  metadata: {
+    type: 'text',
+  },
+};
+
+const item2: TextView = {
+  config: {
+    value: 'sample text',
+  },
+  metadata: {
+    type: 'text',
+  },
+};
 
 const view: ListView = {
   config: {
     iconName: 'test',
-    items: [],
+    items: [item1, item2],
   },
   metadata: {
     type: 'list',

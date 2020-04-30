@@ -3,16 +3,20 @@ import { LinkView } from '../../../../../../../src/app/modules/shared/models/con
 
 const view: LinkView = {
   config: {
-    ref: '',
-    value: '',
+    ref: 'https://example.org/',
+    value: 'Example Link',
   },
   metadata: {
     type: 'link',
   },
 };
 
-const code = `link component
+const code = `title = "Example Link"
+ref = "https://example.org"
+value = "Example Link"
+component.NewLink(title, value, ref)
 `;
+const json = JSON.stringify(view, null, 4);
 
 @Component({
   selector: 'app-angular-link-demo',
@@ -21,4 +25,5 @@ const code = `link component
 export class AngularLinkDemoComponent {
   view = view;
   code = code;
+  json = json;
 }
