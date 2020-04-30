@@ -6,16 +6,23 @@ import { EditorDemoComponent } from './editor.demo';
 import { ApiEditorDemoComponent } from './api-editor.demo';
 import { AngularEditorDemoComponent } from './angular-editor.demo';
 
+import { MonacoEditorModule } from 'ng-monaco-editor';
+import { MonacoEditorConfig, MonacoProviderService } from 'ng-monaco-editor';
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
 
 @NgModule({
   imports: [
     SharedModule,
     CommonModule,
+    MonacoEditorModule.forRoot({
+      baseUrl: '',
+      defaultOptions: {},
+    }),
     FormsModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: EditorDemoComponent }]),
   ],
+  providers: [MonacoProviderService, MonacoEditorConfig],
   declarations: [
     AngularEditorDemoComponent,
     EditorDemoComponent,

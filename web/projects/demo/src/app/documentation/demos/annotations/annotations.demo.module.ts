@@ -17,7 +17,6 @@ import { UtilsModule } from '../../../utils/utils.module';
     SharedModule,
     CommonModule,
     FormsModule,
-    FormsModule,
     RouterModule.forChild([{ path: '', component: AnnotationsDemoComponent }]),
   ],
   declarations: [

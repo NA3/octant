@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { ClarityModule } from '@clr/angular';
-import { CodeTabsComponent } from './code-tab';
-
+import { CodeTabsComponent } from './code-tab.component';
+import { SharedModule } from '../../../../../src/app/modules/shared/shared.module';
 @NgModule({
-  imports: [ClarityModule],
+  imports: [ClarityModule, SharedModule],
   declarations: [CodeTabsComponent],
   exports: [CodeTabsComponent],
 })

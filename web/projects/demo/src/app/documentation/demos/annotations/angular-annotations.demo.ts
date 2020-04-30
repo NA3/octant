@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {
+  View,
   AnnotationsView,
   TextView,
   SummaryView,
@@ -60,6 +61,7 @@ const json2 = JSON.stringify(summaryView, null, 4);
 export class AngularAnnotationsDemoComponent {
   view = view;
   summaryView = summaryView;
+  preview = view as View;
   code1 = code1;
   json1 = json1;
   code2 = code2;
