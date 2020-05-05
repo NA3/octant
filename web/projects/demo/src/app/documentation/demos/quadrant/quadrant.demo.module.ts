@@ -7,12 +7,16 @@ import { ApiQuadrantDemoComponent } from './api-quadrant.demo';
 import { AngularQuadrantDemoComponent } from './angular-quadrant.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { UtilsModule } from '../../../utils/utils.module';
+import { ClarityModule } from '@clr/angular';
+import { MarkdownService, MarkedOptions } from 'ngx-markdown';
 
 @NgModule({
   imports: [
+    UtilsModule,
+    ClarityModule,
     SharedModule,
     CommonModule,
-    FormsModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: QuadrantDemoComponent }]),
   ],
@@ -22,5 +26,6 @@ import { SharedModule } from '../../../../../../../src/app/modules/shared/shared
     ApiQuadrantDemoComponent,
   ],
   exports: [QuadrantDemoComponent],
+  providers: [MarkdownService, MarkedOptions],
 })
 export class QuadrantDemoModule {}
