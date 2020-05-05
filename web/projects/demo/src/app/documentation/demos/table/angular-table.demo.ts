@@ -2,56 +2,96 @@ import { Component } from '@angular/core';
 import {
   TableView,
   TextView,
-  TimestampView,
 } from '../../../../../../../src/app/modules/shared/models/content';
 
-const name: TextView = {
+const addresses: TextView = {
   metadata: {
     type: 'text',
   },
   config: {
-    value: 'ENV_VAR',
+    value: 'Addresses',
   },
 };
 
-const age: TimestampView = {
+const address1: TextView = {
   config: {
-    timestamp: 1586469079,
+    value: '192.168.64.7',
   },
   metadata: {
-    type: 'timestamp',
+    type: 'text',
+  },
+};
+
+const address2: TextView = {
+  config: {
+    value: 'minikube',
+  },
+  metadata: {
+    type: 'text',
+  },
+};
+
+const type1: TextView = {
+  config: {
+    value: 'InternalIP',
+  },
+  metadata: {
+    type: 'text',
+  },
+};
+
+const type2: TextView = {
+  config: {
+    value: 'Hostname',
+  },
+  metadata: {
+    type: 'text',
   },
 };
 
 const view: TableView = {
+  metadata: {
+    type: 'table',
+    title: [addresses],
+  },
   config: {
     columns: [
       {
-        name: 'Name',
-        accessor: 'Name',
+        name: 'Type',
+        accessor: 'Type',
       },
       {
-        name: 'Age',
-        accessor: 'Age',
+        name: 'Address',
+        accessor: 'Address',
       },
     ],
     rows: [
       {
-        Name: name,
-        Age: age,
+        Address: address1,
+        Type: type1,
+      },
+      {
+        Address: address2,
+        Type: type2,
       },
     ],
-    emptyContent: 'Empty content placeholder',
+    emptyContent: 'There are no addresses!',
     loading: false,
-    filters: null,
-  },
-  metadata: {
-    type: 'table',
+    filters: {},
   },
 };
 
-const code = `table component
-`;
+const code = `nodeAddressesColumns := component.NewTableCols("Type", "Address")
+table := component.NewTable("Addresses", "There are no addresses!", nodeAddressesColumns)
+
+for _, address := range node.Status.Addresses {
+  row := component.TableRow{}
+  row["Type"] = component.NewText(string(address.Type))
+  row["Address"] = component.NewText(address.Address)
+
+  table.Add(row)
+}`;
+const json = JSON.stringify(view, null, 4);
 
 @Component({
   selector: 'app-angular-table-demo',
@@ -60,4 +100,5 @@ const code = `table component
 export class AngularTableDemoComponent {
   view = view;
   code = code;
+  json = json;
 }

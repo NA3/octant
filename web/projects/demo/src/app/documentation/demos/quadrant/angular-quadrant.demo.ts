@@ -1,5 +1,17 @@
 import { Component } from '@angular/core';
-import { QuadrantView } from '../../../../../../../src/app/modules/shared/models/content';
+import {
+  QuadrantView,
+  TextView,
+} from '../../../../../../../src/app/modules/shared/models/content';
+
+const title: TextView = {
+  config: {
+    value: 'Summary',
+  },
+  metadata: {
+    type: 'text',
+  },
+};
 
 const view: QuadrantView = {
   config: {
@@ -22,6 +34,7 @@ const view: QuadrantView = {
   },
   metadata: {
     type: 'quadrant',
+    title: [title],
   },
 };
 

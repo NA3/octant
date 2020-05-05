@@ -10,8 +10,9 @@ const view: TimestampView = {
   },
 };
 
-const code = `timestamp component
-`;
+const code = `timestamp := component.NewTimestamp(time.Unix(1586469079, 0))`;
+
+const json = JSON.stringify(view, null, 4);
 
 @Component({
   selector: 'app-angular-timestamp-demo',
@@ -20,4 +21,5 @@ const code = `timestamp component
 export class AngularTimestampDemoComponent {
   view = view;
   code = code;
+  json = json;
 }

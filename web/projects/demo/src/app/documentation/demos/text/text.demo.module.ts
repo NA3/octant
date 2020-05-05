@@ -7,12 +7,16 @@ import { ApiTextDemoComponent } from './api-text.demo';
 import { AngularTextDemoComponent } from './angular-text.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { UtilsModule } from '../../../utils/utils.module';
+import { ClarityModule } from '@clr/angular';
+import { MarkdownService, MarkedOptions } from 'ngx-markdown';
 
 @NgModule({
   imports: [
+    UtilsModule,
+    ClarityModule,
     SharedModule,
     CommonModule,
-    FormsModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: TextDemoComponent }]),
   ],
@@ -22,5 +26,6 @@ import { SharedModule } from '../../../../../../../src/app/modules/shared/shared
     ApiTextDemoComponent,
   ],
   exports: [TextDemoComponent],
+  providers: [MarkdownService, MarkedOptions],
 })
 export class TextDemoModule {}

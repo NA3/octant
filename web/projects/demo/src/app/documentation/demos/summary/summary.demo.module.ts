@@ -7,12 +7,16 @@ import { ApiSummaryDemoComponent } from './api-summary.demo';
 import { AngularSummaryDemoComponent } from './angular-summary.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { UtilsModule } from '../../../utils/utils.module';
+import { ClarityModule } from '@clr/angular';
+import { MarkdownService, MarkedOptions } from 'ngx-markdown';
 
 @NgModule({
   imports: [
+    UtilsModule,
+    ClarityModule,
     SharedModule,
     CommonModule,
-    FormsModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: SummaryDemoComponent }]),
   ],
@@ -22,5 +26,6 @@ import { SharedModule } from '../../../../../../../src/app/modules/shared/shared
     ApiSummaryDemoComponent,
   ],
   exports: [SummaryDemoComponent],
+  providers: [MarkdownService, MarkedOptions],
 })
 export class SummaryDemoModule {}

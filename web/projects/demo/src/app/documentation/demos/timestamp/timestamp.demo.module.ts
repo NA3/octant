@@ -7,12 +7,16 @@ import { ApiTimestampDemoComponent } from './api-timestamp.demo';
 import { AngularTimestampDemoComponent } from './angular-timestamp.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { UtilsModule } from '../../../utils/utils.module';
+import { ClarityModule } from '@clr/angular';
+import { MarkdownService, MarkedOptions } from 'ngx-markdown';
 
 @NgModule({
   imports: [
+    UtilsModule,
+    ClarityModule,
     SharedModule,
     CommonModule,
-    FormsModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: TimestampDemoComponent }]),
   ],
@@ -22,5 +26,6 @@ import { SharedModule } from '../../../../../../../src/app/modules/shared/shared
     ApiTimestampDemoComponent,
   ],
   exports: [TimestampDemoComponent],
+  providers: [MarkdownService, MarkedOptions],
 })
 export class TimestampDemoModule {}
