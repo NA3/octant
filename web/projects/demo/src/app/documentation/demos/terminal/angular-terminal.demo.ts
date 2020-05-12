@@ -6,10 +6,10 @@ const view: TerminalView = {
     name: 'example',
     namespace: 'default',
     podName: 'nginx-pod',
+    containers: ['nginx', 'nginx-sidecar'],
     terminal: {
       container: 'nginx',
       command: '/bin/sh',
-      uuid: '123',
       active: false,
     },
   },

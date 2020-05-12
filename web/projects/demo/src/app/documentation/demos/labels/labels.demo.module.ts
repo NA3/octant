@@ -7,6 +7,8 @@ import { ApiLabelsDemoComponent } from './api-labels.demo';
 import { AngularLabelsDemoComponent } from './angular-labels.demo';
 
 import { SharedModule } from '../../../../../../../src/app/modules/shared/shared.module';
+import { ContentService } from '../../../../../../../src/app/modules/shared/services/content/content.service';
+import { NamespaceService } from '../../../../../../../src/app/modules/shared/services/namespace/namespace.service';
 import { UtilsModule } from '../../../utils/utils.module';
 
 @NgModule({
@@ -18,6 +20,7 @@ import { UtilsModule } from '../../../utils/utils.module';
     FormsModule,
     RouterModule.forChild([{ path: '', component: LabelsDemoComponent }]),
   ],
+  providers: [ContentService, NamespaceService],
   declarations: [
     AngularLabelsDemoComponent,
     LabelsDemoComponent,

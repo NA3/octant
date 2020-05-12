@@ -58,20 +58,20 @@ const documentationRoutes: Routes = [
             m => m.DonutChartDemoModule
           ),
       },
-      {
-        path: 'editor',
-        loadChildren: () =>
-          import('./demos/editor/editor.demo.module').then(
-            m => m.EditorDemoModule
-          ),
-      },
-      {
-        path: 'expression-selector',
-        loadChildren: () =>
-          import(
-            './demos/expression-selector/expression-selector.demo.module'
-          ).then(m => m.ExpressionSelectorDemoModule),
-      },
+      // {
+      //   path: 'editor',
+      //   loadChildren: () =>
+      //     import('./demos/editor/editor.demo.module').then(
+      //       m => m.EditorDemoModule
+      //     ),
+      // },
+      // {
+      //   path: 'expression-selector',
+      //   loadChildren: () =>
+      //     import(
+      //       './demos/expression-selector/expression-selector.demo.module'
+      //     ).then(m => m.ExpressionSelectorDemoModule),
+      // },
       {
         path: 'flexlayout',
         loadChildren: () =>
@@ -79,13 +79,13 @@ const documentationRoutes: Routes = [
             m => m.FlexLayoutDemoModule
           ),
       },
-      {
-        path: 'graphviz',
-        loadChildren: () =>
-          import('./demos/graphviz/graphviz.demo.module').then(
-            m => m.GraphvizDemoModule
-          ),
-      },
+      // {
+      //   path: 'graphviz',
+      //   loadChildren: () =>
+      //     import('./demos/graphviz/graphviz.demo.module').then(
+      //       m => m.GraphvizDemoModule
+      //     ),
+      // },
       {
         path: 'iframe',
         loadChildren: () =>
@@ -93,13 +93,13 @@ const documentationRoutes: Routes = [
             m => m.IFrameDemoModule
           ),
       },
-      {
-        path: 'label-selector',
-        loadChildren: () =>
-          import('./demos/label-selector/label-selector.demo.module').then(
-            m => m.LabelSelectorDemoModule
-          ),
-      },
+      // {
+      //   path: 'label-selector',
+      //   loadChildren: () =>
+      //     import('./demos/label-selector/label-selector.demo.module').then(
+      //       m => m.LabelSelectorDemoModule
+      //     ),
+      // },
       {
         path: 'labels',
         loadChildren: () =>
@@ -150,13 +150,13 @@ const documentationRoutes: Routes = [
             m => m.QuadrantDemoModule
           ),
       },
-      {
-        path: 'selectors',
-        loadChildren: () =>
-          import('./demos/selectors/selectors.demo.module').then(
-            m => m.SelectorsDemoModule
-          ),
-      },
+      // {
+      //   path: 'selectors',
+      //   loadChildren: () =>
+      //     import('./demos/selectors/selectors.demo.module').then(
+      //       m => m.SelectorsDemoModule
+      //     ),
+      // },
       {
         path: 'summary',
         loadChildren: () =>
